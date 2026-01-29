@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About Gospelgo." />
+    <meta property="og:title" content="About Gospelgo." />
+    <meta
+      property="og:description"
+      content="Gospelgo provides free WebGL games that anyone can play by visiting a web address."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://gospelgo.org/images/Gospelgo300.png"
+    />
+    <meta property="og:url" content="https://gospelgo.org/about" />
+    <title>Welcome to Gospelgo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="normalize" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/png" href="../Gg.png" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav collapsible">
+        <a href="/"
+          ><img
+            class="nav__brand"
+            style="height: 80px; width: auto"
+            src="../images/gospelgo-logo.png"
+            alt="gospelgo logo"
+        /></a>
+        <svg class="icon icon--white nav__toggler">
+          <use href="../images/sprite.svg#menu"></use>
+        </svg>
+        <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a href="../games/">Games</a></li>
+          <li class="nav__item"><a href="../about/">About</a></li>
+          <li class="nav__item"><a href="../get-involved/">Get Involved</a></li>
+          <li class="nav__item"><a href="../community/">Community</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="block block--dark block--skewed-left">
+      <div class="container">
+        <h2 class="block__heading">REPLACE THIS SECTION</h2>
+        <p>
+          ADD NEW CONTENT BETWEEN HEADER AND FOOTER BUT KEEP THE OUTER div
+          class=container.
+        </p>
+        <p>
+          Gosplego uses a continous-deployment pipeline for quick turnaround
+          time of updates and bug fixes.
+        </p>
+      </div>
+    </section>
+    <div class="container">
+      <form
+        name="feedback"
+        netlify
+        netlify-honeypot="bot-field"
+        method="POST"
+        class="netlify-feedback-form"
+      >
+        <input type="hidden" name="form-name" value="feedback" />
+        <textarea name="msg" placeholder="Your feedback…" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <div class="container">
+      <div class="callout callout--primary callout--footer">
+        <div class="grid grid--1x2">
+          <div class="callout__content">
+            <h2 class="callout__heading">Jesus is the way.</h2>
+            <p>
+              For God did not send His Son into the world to condemn the world,
+              but to save the world through Him.
+            </p>
+          </div>
+          <a
+            href="https://www.youtube.com/watch?v=LJG94XVL0t0&list=PLkpgE_jJEv1DfHlX_mqGe6mZfuOMuJ4BW"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--secondary btn--stretched"
+            >Learn more about the gospel</a
+          >
+        </div>
+      </div>
+    </div>
+    <footer class="block block--dark footer">
+      <div class="container grid footer__sections">
+        <div class="collapsible collapsible--expanded footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Games</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="../images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="../word/">Word</a></li>
+              <li><a href="../big-heart/">Big Heart</a></li>
+              <li><a href="../gospelgo/">Gospelgo</a></li>
+              <li><a href="../gospelgo-desktop/">Gospelgo desktop</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Company</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="../images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="../about/">About Gospelgo</a></li>
+              <li><a href="../faq/">FAQs</a></li>
+              <li><a href="../privacy-policy/">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Support</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="../images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="../feedback/">Feedback</a></li>
+              <li><a href="../share/">Share</a></li>
+              <li><a href="../pray/">Pray</a></li>
+              <li><a href="../donate/">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Community</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="../images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li>
+                <a
+                  href="https://discord.gg/x9chq2cw2P"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Discord</a
+                >
+              </li>
+              <li><a href="../game-studios/">Game studios</a></li>
+              <li><a href="../links/">Links</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__brand">
+          <img src="../images/Gospelgo150.png" alt="gospelgo logo" />
+          <p class="footer__copyright">Copyright 2026</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

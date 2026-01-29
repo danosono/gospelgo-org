@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Gospelgo provides free WebGL games that anyone can play by visiting a web address."
+    />
+    <meta property="og:title" content="Gospelgo: Free WebGL games." />
+    <meta
+      property="og:description"
+      content="Gospelgo provides free WebGL games that anyone can play by visiting a web address."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://gospelgo.org/images/Gospelgo300.png"
+    />
+    <meta property="og:url" content="https://gospelgo.org" />
+    <title>Welcome to Gospelgo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="normalize" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/png" href="Gg.png" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav collapsible">
+        <a href="/"
+          ><img
+            class="nav__brand"
+            style="height: 80px; width: auto"
+            src="/images/gospelgo-logo.png"
+            alt="gospelgo logo"
+        /></a>
+        <svg class="icon icon--white nav__toggler">
+          <use href="images/sprite.svg#menu"></use>
+        </svg>
+        <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a href="/games/">Games</a></li>
+          <li class="nav__item"><a href="/about/">About</a></li>
+          <li class="nav__item"><a href="/get-involved/">Get Involved</a></li>
+          <li class="nav__item"><a href="/community/">Community</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="block block--dark block--skewed-left hero">
+      <div class="container grid grid--1x2">
+        <header class="block__header hero__content" data-aos="fade-up">
+          <h1 class="block__heading">Jesus reigns in video games.</h1>
+          <p class="hero__tagline">
+            Get to know your creator as you play. Gaming doesn't have to be void
+            of God and His glory. Games created by followers of Jesus don't have
+            to be half baked.
+          </p>
+        </header>
+        <img
+          data-aos="fade-left"
+          class="hero__image"
+          src="images/banner.png"
+          alt=""
+        />
+      </div>
+    </section>
+    <div class="container">
+      <section class="block container">
+        <header class="block__header">
+          <h2>Games</h2>
+          <p>
+            Check out the games. Word is currently the only complete finished
+            game. Big Heart is a mini game to explore the possibilities for a
+            WebGL RPG game. Gospelgo and Gospelgo Desktop are in the alpha
+            stages.
+          </p>
+        </header>
+        <article class="grid grid--1x2 feature">
+          <div class="feature__content" data-aos="zoom-in-left">
+            <img
+              class="icon--word"
+              src="images/wordsq300.png"
+              alt="Word small icon"
+            />
+            <h3 class="feature__heading">Learn/practice typing</h3>
+            <p>
+              Imporove your typing skills while you learn the Bible. Type the
+              entire Bible and track your progress. Stop typing anytime to
+              quietly read the Bible text; your WPM resets after 5 seconds of
+              idle time. Learn to touch type (type without looking at the
+              keyboard).
+            </p>
+            <a
+              href="https://word.gospelgo.org/"
+              target="_blank"
+              class="link-arrow"
+              >Play</a
+            >
+          </div>
+          <a href="https://word.gospelgo.org/" target="_blank">
+            <img
+              data-aos="fade-right"
+              class="feature__image"
+              src="images/word-feature.png"
+              alt="Word feature, shows words per minute"
+            />
+          </a>
+        </article>
+        <article class="grid grid--1x2 feature">
+          <div class="feature__content" data-aos="zoom-in-right">
+            <img
+              class="icon--big-heart"
+              src="images/big-heart-logo.png"
+              alt="Word small icon"
+            />
+            <h3 class="feature__heading">Can you unlock the big heart?</h3>
+            <p>
+              Big Heart is a mini RPG created to explore possibilities. Only
+              takes about 5 minutes to play. It explores adding themes of right
+              and wrong, temptation, kindness, forgiveness and adventure in a
+              web based game that is free for all to enjoy by simply visiting a
+              web address. bigheart.gospelgo.org
+            </p>
+            <a
+              href="https://bigheart.gospelgo.org"
+              target="_blank"
+              class="link-arrow"
+              >Play</a
+            >
+          </div>
+          <a href="https://bigheart.gospelgo.org" target="_blank">
+            <img
+              data-aos="fade-left"
+              class="feature__image"
+              src="images/big-heart.png"
+              alt="Word feature, shows words per minute"
+            />
+          </a>
+        </article>
+        <article class="grid grid--1x2 feature">
+          <div class="feature__content" data-aos="zoom-in-left">
+            <img
+              class="icon--gg4"
+              src="images/Gg4_400.png"
+              alt="Word small icon"
+            />
+            <img
+              class="icon--construction"
+              src="images/construction-caution-svgrepo-com.svg"
+              alt="Construction icon ind indicating game is not complete"
+            />
+            <h3 class="feature__heading">Gospel go</h3>
+            <p>
+              Gospelgo's flagship game. Gospelgo is in live development
+              (live-ops), so the game is live even though it is incomplete.
+            </p>
+            <a
+              href="https://play.gospelgo.org"
+              target="_blank"
+              class="link-arrow"
+              >Play</a
+            >
+          </div>
+          <a href="https://play.gospelgo.org" target="_blank">
+            <img
+              data-aos="fade-right"
+              class="feature__image"
+              src="images/gospelgo-gameplay.png"
+              alt="Word feature, shows words per minute"
+            />
+          </a>
+        </article>
+        <article class="grid grid--1x2 feature">
+          <div class="feature__content" data-aos="zoom-in-right">
+            <img
+              class="icon--gg4"
+              src="images/Gg4_400.png"
+              alt="Word small icon"
+            />
+            <img
+              class="icon--construction"
+              src="images/construction-caution-svgrepo-com.svg"
+              alt="Construction icon ind indicating game is not complete"
+            />
+            <h3 class="feature__heading">Gospelgo Desktop</h3>
+            <p>
+              Desktop version of Gospelgo. This is also in live development.
+              Check out the tech stack via the link at the top of the page.
+            </p>
+            <a
+              href="https://desktop.gospelgo.org"
+              target="_blank"
+              class="link-arrow"
+              >Play</a
+            >
+          </div>
+          <a href="https://desktop.gospelgo.org" target="_blank">
+            <img
+              data-aos="fade-left"
+              class="feature__image feature--gg-desktop-img"
+              src="images/gospelgo-desktop-gameplay.png"
+              alt="Word feature, shows words per minute"
+            />
+          </a>
+        </article>
+      </section>
+      <div class="callout callout--primary callout--footer">
+        <div class="grid grid--1x2">
+          <div class="callout__content">
+            <h2 class="callout__heading">
+              Jesus is the way, the truth and the life.
+            </h2>
+            <p>
+              Jesus Christ gave His life and took it up again for you. He loves
+              you and calls you to Himself. Call on His name.
+            </p>
+          </div>
+          <a
+            href="https://www.youtube.com/@InTouchMinistries"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--secondary btn--stretched"
+            >Learn more about the gospel</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="block block--dark footer">
+      <div class="container grid footer__sections">
+        <div class="collapsible collapsible--expanded footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Games</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="/images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="/word/">Word</a></li>
+              <li><a href="/big-heart/">Big Heart</a></li>
+              <li><a href="/gospelgo/">Gospelgo</a></li>
+              <li><a href="/gospelgo-desktop/">Gospelgo desktop</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Company</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="/images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="/about/">About Gospelgo</a></li>
+              <li><a href="/faq/">FAQs</a></li>
+              <li><a href="/privacy-policy/">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Support</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="/images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="/feedback/">Feedback</a></li>
+              <li><a href="/share/">Share</a></li>
+              <li><a href="/pray/">Pray</a></li>
+              <li><a href="/donate/">Donate</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Community</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="/images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li>
+                <a
+                  href="https://discord.gg/x9chq2cw2P"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Discord</a
+                >
+              </li>
+              <li><a href="/game-studios/">Game studios</a></li>
+              <li><a href="/links/">Links</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__brand">
+          <img src="images/Gospelgo150.png" alt="gospelgo logo" />
+          <p class="footer__copyright">Copyright 2026</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Gg Website -->
+    <!--
+    <header>
+      
+      <nav aria-label="Main tabs">
+        <ul>
+          <li>
+            <a href="#" role="tab" class="logo active" id="logo-tab">
+              <img
+                src="images/gospelgo-logo.png"
+                alt="Gospel in games."
+                title="Gospel go - I love Jesus!"
+                class="logo-header"
+              />
+            </a>
+          </li>
+          <li><a href="#mobile" role="tab">Mobile Games</a></li>
+          <li><a href="#desktop" role="tab">Desktop Games</a></li>
+          <li><a href="#about" role="tab">About</a></li>
+          <li><a href="#" role="tab">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="page-content">
+      <p class="highlight">Jesus reigns in video games.</p>
+      <br />
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button><br /><br />
+      <article>
+        <a href="/notes.html">Temporary Link to Notes</a>
+      </article>
+
+      <div class="line-block">
+        <h3>Mobile browser games:</h3>
+        <a href="https://play.gospelgo.org" target="_blank"
+          >Play Gospel Go Mobile (in development)</a
+        ><br /><br />
+        <h3>Desktop browser games:</h3>
+        <a href="https://desktop.gospelgo.org" target="_blank"
+          >Play Gospel Go Desktop (in development)</a
+        ><br />
+        <a href="https://word.gospelgo.org" target="_blank"
+          >Play Word (Bible typing game)</a
+        ><br /><br />
+        <h3>Desktop/Mobile brower games:</h3>
+        <a href="https://bigheart.gospelgo.org" target="_blank"
+          >Play Big Heart (mini RPG)</a
+        ><small> Hint: follow the path</small><br /><br />
+        <small>Note: Install any game as an app (Progressive Web App)</small
+        ><br />
+        <small>- E.g., Your browser's hamburger menu > More tools > Apps</small
+        ><br />
+        <small>- Tested on Windows and Android</small><br />
+        <small>- Or choose "Add tab to taskbar"</small><br />
+        <h4>How do people meet Jesus?</h4>
+        <a
+          href="https://www.youtube.com/playlist?list=PLkpgE_jJEv1DfHlX_mqGe6mZfuOMuJ4BW"
+          target="_blank"
+          >Curated YouTube playlist</a
+        ><br /><br />
+        <h4>Developers, enhance your Unity WebGL builds:</h4>
+        <a
+          href="https://assetstore.unity.com/packages/tools/integration/sdresponsive-webgl-system-314596"
+          target="_blank"
+          >SDResponsive WebGL System</a
+        ><br /><br /><br />
+      </div>
+    </div>
+
+    <footer class="footer-links">
+      <a href="about.html">About Gospel go</a><br />
+      <div class="discord-invite">
+        <p>📢 Join the Gospel Go Community on Discord!</p>
+        <p>
+          Connect with players, get updates, and share feedback.<br />
+          👉
+          <a href="https://discord.gg/x9chq2cw2P" target="_blank"
+            >Join us on Discord</a
+          >
+        </p>
+      </div>
+
+      <p>📧 email: admin@gospelgo.org</p>
+    </footer>
+
+    <script src="dark-mode.js"></script>
+    -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
