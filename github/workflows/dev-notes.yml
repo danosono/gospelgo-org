@@ -1,0 +1,50 @@
+name: Dev Notes to Discord
+
+on:
+  push:
+    branches:
+      - main # track main branch; add others if needed
+
+jobs:
+  post-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post commits to Discord with embeds
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fetch = require('node-fetch');
+            const webhookUrl = process.env.DISCORD_DEV_NOTES_WEBHOOK;
+
+            const commits = github.context.payload.commits || [];
+            const branch = github.context.ref.replace('refs/heads/', ''); // get branch name
+
+            if (commits.length === 0) return;
+
+            // Create embed fields for each commit
+            const fields = commits.map(c => ({
+              name: `${c.author.name}`,
+              value: `[${c.message}](${c.url})`,
+            }));
+
+            // Discord embed payload
+            const payload = {
+              embeds: [
+                {
+                  title: `📝 ${commits.length} new commit${commits.length > 1 ? 's' : ''} pushed`,
+                  description: `Branch: **${branch}**`,
+                  color: 0x1abc9c, // teal color
+                  fields: fields,
+                  footer: { text: 'GospelGo Dev Notes' },
+                  timestamp: new Date().toISOString()
+                }
+              ]
+            };
+
+            await fetch(webhookUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+        env:
+          DISCORD_DEV_NOTES_WEBHOOK: ${{ secrets.DISCORD_DEV_NOTES_WEBHOOK }}

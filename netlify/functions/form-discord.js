@@ -1,13 +1,20 @@
+import fetch from "node-fetch";
+
 export async function handler(event) {
   try {
+    if (event.httpMethod !== "POST") {
+      return { statusCode: 405, body: "Method Not Allowed" };
+    }
+
     const params = new URLSearchParams(event.body);
 
     const message = params.get("msg")?.trim();
-    const honeypot = params.get("company");
+    const honeypot = params.get("company"); // hidden field
     const turnstileToken = params.get("cf-turnstile-response");
 
-    // Honeypot check
+    // 1️⃣ Honeypot check
     if (honeypot) {
+      // Optional: log spam here
       return { statusCode: 200, body: "OK" };
     }
 
@@ -15,7 +22,22 @@ export async function handler(event) {
       return { statusCode: 400, body: "Missing message" };
     }
 
-    // Verify Turnstile
+    // 2️⃣ Enforce maximum length
+    const MAX_LENGTH = 1000;
+    if (message.length > MAX_LENGTH) {
+      return { statusCode: 400, body: `Message too long (max ${MAX_LENGTH} characters)` };
+    }
+
+    // 3️⃣ Moderate filter with normalized banned words
+    const normalized = message.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "");
+    const bannedWords = ["fuck", "fck", "shit", "sh1t", "bitch", "cunt", "retard"];
+    const isFlagged = bannedWords.some(word => normalized.includes(word));
+
+    // 4️⃣ Turnstile verification
+    if (!turnstileToken || !process.env.TURNSTILE_SECRET_KEY) {
+      return { statusCode: 400, body: "Turnstile token missing" };
+    }
+
     const turnstileRes = await fetch(
       "https://challenges.cloudflare.com/turnstile/v0/siteverify",
       {
@@ -32,21 +54,9 @@ export async function handler(event) {
       return { statusCode: 403, body: "Bot detected" };
     }
 
-    // Moderate filter
-    const bannedWords = [
-      "fuck",
-      "shit",
-      "bitch",
-      "cunt",
-      "retard"
-    ];
-
-    const lower = message.toLowerCase();
-    const isFlagged = bannedWords.some(word => lower.includes(word));
-
+    // 5️⃣ Prepare Discord message
     const timestamp = new Date().toISOString();
-    const ip =
-      event.headers["x-forwarded-for"]?.split(",")[0] || "unknown";
+    const ip = event.headers["x-forwarded-for"]?.split(",")[0] || "unknown";
 
     const webhookUrl = isFlagged
       ? process.env.DISCORD_SPAM_WEBHOOK_URL
@@ -62,12 +72,11 @@ export async function handler(event) {
       body: JSON.stringify({ content })
     });
 
+    // 6️⃣ Redirect to thank-you page
     return {
       statusCode: 302,
-      headers: { Location: "/thanks.html" }
+      headers: { Location: "/thanks-feedback.html" } // change if needed
     };
   } catch (err) {
     console.error(err);
-    return { statusCode: 500, body: "Server error" };
-  }
-}
+    return { statusCode: 500, body: "Server error"

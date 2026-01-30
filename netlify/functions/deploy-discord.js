@@ -1,20 +1,26 @@
 export async function handler(event) {
   try {
-    const body = JSON.parse(event.body);
-
-    const commitMessage = body.commit_title || body.commit_body || "No commit message";
-    const branch = body.branch || body.commit_ref || "unknown";
-    const siteName = body.site_name || "Netlify Site";
-    const deployUrl = body.links?.permalink || body.deploy_ssl_url;
-
     const discordWebhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
+    // Extract deploy info from Netlify event body (if available)
+    let body = {};
+    try {
+      body = JSON.parse(event.body);
+    } catch {
+      body = {};
+    }
+
+    const siteName = "gospelgo.org"; // fixed site name
+    const branch = body.branch || body.commit_ref || "main";
+    const deployUrl = body.deploy_ssl_url || body.url || "https://gospelgo.org";
 
     const discordPayload = {
       content: `🚀 **Deploy succeeded**\n\n` +
                `**Site:** ${siteName}\n` +
                `**Branch:** ${branch}\n` +
-               `**Commit:** ${commitMessage}\n` +
-               (deployUrl ? `🔗 ${deployUrl}` : "")
+               `**URL:** ${deployUrl}\n\n` +
+               `See dev notes channel for details (commit messages).\n\n` +
+               `🙏 Please pray for gospelgo to glorify Jesus!`
     };
 
     await fetch(discordWebhookUrl, {
@@ -29,4 +35,3 @@ export async function handler(event) {
     return { statusCode: 500, body: "Webhook failed" };
   }
 }
-
