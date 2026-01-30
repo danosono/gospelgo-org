@@ -63,17 +63,35 @@
     </section>
     <div class="container">
       <form
-        name="feedback"
-        netlify
-        netlify-honeypot="bot-field"
         method="POST"
-        action="/.netlify/functions/discord-hook"
-        class="netlify-feedback-form"
+        action="/.netlify/functions/form-discord"
+        class="feedback-form"
       >
-        <input type="hidden" name="form-name" value="feedback" />
+        <!-- Honeypot -->
+        <input
+          type="text"
+          name="company"
+          tabindex="-1"
+          autocomplete="off"
+          hidden
+        />
+
+        <!-- Turnstile -->
+        <div
+          class="cf-turnstile"
+          data-sitekey="0x4AAAAAACVtMjxDVWxIc-I9"
+          data-theme="light"
+        ></div>
+
         <textarea name="msg" placeholder="Your feedback…" required></textarea>
         <button type="submit">Send</button>
       </form>
+
+      <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+      ></script>
     </div>
     <div class="container">
       <div class="callout callout--primary callout--footer">

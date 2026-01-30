@@ -1012,7 +1012,7 @@ p {
 		font-size: 2.5rem;
 	}
 	
-	.netlify-feedback-form {
+	.feedback-form {
 		max-width: 1140px;
   		margin: 2rem auto;
   		padding: 1rem;
@@ -1021,7 +1021,7 @@ p {
   		box-shadow:0 2px 6px rgba(0,0,0,.1);
 	}
 
-	.netlify-feedback-form textarea {
+	.feedback-form textarea {
 		width:100%;
   		min-height:120px;
   		padding:.5rem;
@@ -1033,7 +1033,7 @@ p {
 		caret-color: #fff;
 	}
 
-	.netlify-feedback-form button {
+	.feedback-form button {
 		margin-top:.5rem;
   		padding:.5rem 1rem;
   		background: var(--color-primary);
