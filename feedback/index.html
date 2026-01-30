@@ -67,9 +67,10 @@
         netlify
         netlify-honeypot="bot-field"
         method="POST"
+        action="/.netlify/functions/discord-hook"
         class="netlify-feedback-form"
       >
-        <input type="hidden" name="form-name" value="feedback" />
+        <input type="hidden" name="feedback-form" value="feedback" />
         <textarea name="msg" placeholder="Your feedback…" required></textarea>
         <button type="submit">Send</button>
       </form>
