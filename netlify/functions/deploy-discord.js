@@ -16,7 +16,7 @@ export async function handler(event) {
 
     const discordPayload = {
       content: `🚀 **Deploy succeeded**\n` +
-                '(WEBSITE) gospelgo.org' +`\n\n` +
+                '(WEBSITE) https://www.gospelgo.org' +`\n\n` +
                `**Site:** ${siteName}\n` +
                `**Branch:** ${branch}\n` +
                `**URL:** ${deployUrl}\n\n` +
