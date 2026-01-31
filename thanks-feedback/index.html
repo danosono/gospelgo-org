@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Gospelgo feedback form." />
-    <meta property="og:title" content="Feedback for Gospelgo." />
+    <meta name="description" content="Feedback success page." />
+    <meta property="og:title" content="Post Feedback page." />
     <meta
       property="og:description"
-      content="
-      Leave feedback on the Gospelgo website, games, or anything else related to Gospelgo."
+      content="Thank you for your feedback on Gospelgo."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
       content="https://gospelgo.org/images/Gospelgo300.png"
     />
-    <meta property="og:url" content="https://gospelgo.org/feedback" />
+    <meta property="og:url" content="https://gospelgo.org/thanks-feedback" />
     <title>Welcome to Gospelgo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,43 +50,19 @@
     </header>
     <section class="block block--dark block--skewed-left">
       <div class="container">
-        <h2 class="block__heading">Feedback</h2>
+        <h2 class="block__heading">Thank you for your feedback!</h2>
         <p>
-          Leave your feedback below. We appreciate all kinds of feedback to help
-          improve Gospelgo.
+          Your feedback has been received. We appreciate you taking the time to
+          help us improve Gospelgo.
         </p>
         <p>
-          Leave feedback on the website, games, or anything else related to
-          Gospelgo.
+          Currently, feedback is posted to our Discord server where our team can
+          review it and others can see it and offer their own thoughts. Let's
+          work together to make Gospelgo better!
         </p>
       </div>
     </section>
-    <div class="container">
-      <form
-        method="POST"
-        action="/.netlify/functions/form-discord"
-        class="feedback-form"
-      >
-        <!-- Honeypot -->
-        <input
-          type="text"
-          name="company"
-          tabindex="-1"
-          autocomplete="off"
-          hidden
-        />
-
-        <!-- Turnstile -->
-        <div
-          class="cf-turnstile"
-          data-sitekey="0x4AAAAAACVtMjxDVWxIc-I9"
-          data-theme="light"
-        ></div>
-
-        <textarea name="msg" placeholder="Your feedback…" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <div class="container"></div>
     <div class="container">
       <div class="callout callout--primary callout--footer">
         <div class="grid grid--1x2">
