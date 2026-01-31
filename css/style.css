@@ -36,6 +36,23 @@ body {
 	color: var(--color-body);
 }
 
+/* Link styles */
+a:link {
+	color: var(--color-primary);
+}
+
+a:visited {
+	color: var(--color-secondary); /* Lighter blue for visited links */
+}
+
+a:hover {
+	color: var(--color-accent);
+}
+
+a:active {
+	color: var(--color-accent);
+}
+
 h1, h2, h3 {
 	color: var(--color-headings);
 	margin-bottom: 1.5rem;
@@ -288,6 +305,10 @@ p {
 
 	.btn--secondary:hover {
 		background: #00c8eb;
+	}
+
+	.btn--secondary:visited {
+		color: #2b5663;
 	}
 
 	.btn--accent {
