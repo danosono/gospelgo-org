@@ -27,7 +27,7 @@ jobs:
             const branch = context.ref.replace("refs/heads/", "");
 
             const fields = commits.map(c => ({
-              name: c.author?.name || "Unknown author",
+              name: context.actor,
               value: `[${c.message}](${c.url})`
             }));
 
