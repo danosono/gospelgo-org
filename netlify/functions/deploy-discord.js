@@ -20,7 +20,7 @@ export async function handler(event) {
                `**Branch:** ${branch}\n` +
                `**URL:** ${deployUrl}\n\n` +
                `See dev notes channel for details (commit messages).\n\n` +
-               `🙏 Please pray for gospelgo to glorify Jesus!`
+               `🙏 Please pray for gospelgo to glorify Jesus!\n`
     };
 
     await fetch(discordWebhookUrl, {
