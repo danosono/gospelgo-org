@@ -15,7 +15,8 @@ export async function handler(event) {
     const deployUrl = body.deploy_ssl_url || body.url || "https://gospelgo.org";
 
     const discordPayload = {
-      content: `🚀 **Deploy succeeded**\n\n` +
+      content: `🚀 **Deploy succeeded**\n` +
+                '(WEBSITE) gospelgo.org' +`\n\n` +
                `**Site:** ${siteName}\n` +
                `**Branch:** ${branch}\n` +
                `**URL:** ${deployUrl}\n\n` +

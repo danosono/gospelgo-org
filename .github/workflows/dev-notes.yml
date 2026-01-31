@@ -1,0 +1,51 @@
+name: Dev Notes to Discord
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  post-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post commits to Discord with embeds
+        uses: actions/github-script@v6
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_DEV_NOTES_WEBHOOK }}
+        with:
+          script: |
+            const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+
+            const commits = github.context.payload.commits || [];
+            if (commits.length === 0) {
+              console.log("No commits to post");
+              return;
+            }
+
+            const branch = github.context.ref.replace("refs/heads/", "");
+
+            const fields = commits.map(c => ({
+              name: c.author?.name || "Unknown author",
+              value: `[${c.message}](${c.url})`
+            }));
+
+            const payload = {
+              embeds: [
+                {
+                  title: `📝 ${commits.length} new commit${commits.length > 1 ? "s" : ""} pushed`,
+                  description: `Branch: **${branch}**`,
+                  color: 0x1abc9c,
+                  fields,
+                  footer: { text: "GospelGo Dev Notes" },
+                  timestamp: new Date().toISOString()
+                }
+              ]
+            };
+
+            await fetch(webhookUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+            });
