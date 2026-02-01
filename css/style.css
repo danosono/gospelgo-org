@@ -1,6 +1,6 @@
 :root {
-	--color-primary: #2584ff;
-	--color-secondary: #00d9ff;
+	--color-primary: #0d52cc;
+	--color-secondary: #00b3cc;
 	--color-accent: #ff3400;
 	--color-headings: whitesmoke; /*#1b0760*/
 	--color-body: #918ca4;
@@ -405,9 +405,26 @@ p {
 		color: #fff;
 	}
 
+
 	.card--secondary .card__header {
 		background: var(--color-secondary);
 		color: #fff;
+	}
+
+	.card--secondary .card__header a {
+		color: white;
+	}
+
+	.card--secondary .card__header a:visited {
+		color: #2b5663;
+	}
+
+	.card--secondary .card__header a:hover {
+		color: var(--color-accent);
+	}
+
+	.card--secondary .card__header a:active {
+		color: var(--color-accent);
 	}
 
 	.card--primary .badge--primary {
