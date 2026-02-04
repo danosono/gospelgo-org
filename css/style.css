@@ -1081,4 +1081,42 @@ p {
   		cursor:pointer;
 	}
 
+	/* Lightbox */
+	.lightbox {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.85);
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		z-index: 9999;
+	}
+
+	.lightbox.is-open {
+		display: flex;
+	}
+
+	.lightbox__img {
+		max-width: 95vw;
+		max-height: 90vh;
+		box-shadow: 0 0 30px 10px #000;
+		border-radius: 6px;
+	}
+
+	.lightbox__close {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		background: transparent;
+		color: #fff;
+		border: 0;
+		font-size: 3.2rem;
+		cursor: pointer;
+	}
+
+	.lightbox-trigger {
+		cursor: zoom-in;
+	}
+
 	

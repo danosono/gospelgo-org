@@ -50,68 +50,99 @@
     </header>
     <section class="block block--dark block--skewed-left">
       <div class="container">
-        <h2 class="block__heading">REPLACE THIS SECTION</h2>
+        <h2 class="block__heading">Word</h2>
         <p>
-          ADD NEW CONTENT BETWEEN HEADER AND FOOTER BUT KEEP THE OUTER div
-          class=container.
+          Type the entire Bible while improving your typing skills. Word is a
+          touch typing game that helps you learn to type without looking at the
+          keyboard.
         </p>
         <p>
-          Gosplego uses a continous-deployment pipeline for quick turnaround
-          time of updates and bug fixes.
+          Hours of fun and learning await you in Word.
+          <a href="https://word.gospelgo.org" target="_blank">Give it a try!</a>
+        </p>
+        <p>
+          Word uses the
+          <a href="https://worldenglish.bible/" target="_blank"
+            >World English Bible (WEBP)</a
+          >
+          translation.
         </p>
       </div>
     </section>
-    <div class="grid grid--1x2">
-      <section class="block container" data-aos="fade-up">
-        <header class="block__header">
-          <h2 class="block__heading">REPLACE THIS SECTION</h2>
+    <section class="container">
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content">
+          <h3 class="feature__heading">Type</h3>
           <p>
-            Gospelgo, a go map game is in the very early stages of development.
-            So Gospelgo is the name of the project and the name of two planned
-            games, Gospelgo and Gosplego Desktop. Other games are and will be
-            available as well such as Word, Big Heart and Gospelgo Bubble
-            Shooter.
+            Learn type or improve your typing speed while you read the Bible.
           </p>
-        </header>
-      </section>
-      <section class="block container" data-aos="fade-up">
-        <header class="block__header">
-          <h2 class="block__heading">REPLACE THIS SECTION</h2>
+          <a href="https://word.gospelgo.org" target="_blank" class="link-arrow"
+            >Start typing</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          src="../images/word_gameplay.gif"
+          alt="Word feature, shows words per minute"
+          data-lightbox-src="../images/word_gameplay.gif"
+        />
+      </article>
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content">
+          <h3 class="feature__heading">Features</h3>
           <p>
-            Gospelgo games are easy to access by visiting a simple web
-            address.Ths will bypass gate keepers like some game platforms, but
-            those platforms have large audiences so it is a trade-off. Pray that
-            those who need to find Gospelg games will do so. God will work it
-            out. He can do anything!
+            Track your progress. No penalty for reading the verse (5 second idle
+            reset). See mistyped characters (optional). Press Delete to restart
+            the level. Choose to display WPM and/or Mistakes, and much more!
           </p>
-        </header>
-      </section>
-      <section class="block container" data-aos="fade-right">
-        <header class="block__header">
-          <h2 class="block__heading">REPLACE THIS SECTION</h2>
+          <a href="https://word.gospelgo.org" target="_blank" class="link-arrow"
+            >Click to play</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          src="../images/word-options.png"
+          alt="Word options menu"
+          data-lightbox-src="../images/word-options.png"
+        />
+      </article>
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content">
+          <h3 class="feature__heading">Progress Tracking</h3>
           <p>
-            The plan is that most or all Gospelgo games will remain free. There
-            are costs associated with bandwidth usage, web calls and the like,
-            so donation links will be provided for those who want to
-            give/support, but there is no pressure to do so. Also, Gospelgo may
-            release some games
+            Your progress is displayed on mulitple gameplay menus (Book, Chapter
+            and Verse menu), and on the Progress Menu.
           </p>
-        </header>
-      </section>
-      <section class="block container" data-aos="fade-left">
-        <header class="block__header">
-          <h2 class="block__heading">REPLACE THIS SECTION</h2>
+          <a href="https://word.gospelgo.org" target="_blank" class="link-arrow"
+            >Take me to the game</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          src="../images/word-progress-marked.png"
+          alt="Word progress menu"
+          data-lightbox-src="../images/word-progress-marked.png"
+        />
+      </article>
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content">
+          <h3 class="feature__heading">Cloud Save</h3>
           <p>
-            Gospelgo uses a tech stack that allows for quick deployment of
-            changes, updates and bug fixes. This includes the Unity gaming
-            engine, Github (for this website), Netlify and webhooks for
-            automatic publishing of games, the website and discord
-            notifications. The discord posts include deploy messages which serve
-            as dev notes.
+            Login with email and password to save your progress in the cloud.
+            Play from any desktop browser on any PC/Mac without losing progress.
           </p>
-        </header>
-      </section>
-    </div>
+          <a href="https://word.gospelgo.org" target="_blank" class="link-arrow"
+            >Play</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          src="../images/word-login.png"
+          alt="Word feature, shows words per minute"
+          data-lightbox-src="../images/word-login.png"
+        />
+      </article>
+    </section>
     <div class="container">
       <div class="callout callout--primary callout--footer">
         <div class="grid grid--1x2">
@@ -213,6 +244,49 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox__close" type="button" aria-label="Close">
+        ×
+      </button>
+      <img class="lightbox__img" alt="" />
+    </div>
+    <script>
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = lightbox.querySelector(".lightbox__img");
+        const closeBtn = lightbox.querySelector(".lightbox__close");
+
+        function openLightbox(src, alt) {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt || "";
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          lightboxImg.src = "";
+          lightboxImg.alt = "";
+        }
+
+        document.querySelectorAll(".lightbox-trigger").forEach((img) => {
+          img.addEventListener("click", () => {
+            const src = img.getAttribute("data-lightbox-src") || img.src;
+            openLightbox(src, img.alt);
+          });
+        });
+
+        closeBtn.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLightbox();
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeLightbox();
+        });
+      })();
     </script>
   </body>
 </html>
