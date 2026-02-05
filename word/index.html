@@ -41,6 +41,7 @@
           <use href="../images/sprite.svg#menu"></use>
         </svg>
         <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a href="/feedback/">Feedback</a></li>
           <li class="nav__item"><a href="../games/">Games</a></li>
           <li class="nav__item"><a href="../about/">About</a></li>
           <li class="nav__item"><a href="../get-involved/">Get Involved</a></li>
@@ -244,49 +245,6 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
-    </script>
-    <div class="lightbox" id="lightbox" aria-hidden="true">
-      <button class="lightbox__close" type="button" aria-label="Close">
-        ×
-      </button>
-      <img class="lightbox__img" alt="" />
-    </div>
-    <script>
-      (function () {
-        const lightbox = document.getElementById("lightbox");
-        const lightboxImg = lightbox.querySelector(".lightbox__img");
-        const closeBtn = lightbox.querySelector(".lightbox__close");
-
-        function openLightbox(src, alt) {
-          lightboxImg.src = src;
-          lightboxImg.alt = alt || "";
-          lightbox.classList.add("is-open");
-          lightbox.setAttribute("aria-hidden", "false");
-        }
-
-        function closeLightbox() {
-          lightbox.classList.remove("is-open");
-          lightbox.setAttribute("aria-hidden", "true");
-          lightboxImg.src = "";
-          lightboxImg.alt = "";
-        }
-
-        document.querySelectorAll(".lightbox-trigger").forEach((img) => {
-          img.addEventListener("click", () => {
-            const src = img.getAttribute("data-lightbox-src") || img.src;
-            openLightbox(src, img.alt);
-          });
-        });
-
-        closeBtn.addEventListener("click", closeLightbox);
-        lightbox.addEventListener("click", (e) => {
-          if (e.target === lightbox) closeLightbox();
-        });
-
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") closeLightbox();
-        });
-      })();
     </script>
   </body>
 </html>
