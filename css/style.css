@@ -695,6 +695,12 @@ p {
 		z-index: 10;
 		margin-bottom: -4rem;
 	}
+
+	.callout--footer-friends {
+		position: relative;
+		z-index: 10;
+		margin-bottom: 1rem;
+	}
 	
 	/* Collapsibles */
 

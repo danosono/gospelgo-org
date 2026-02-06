@@ -74,12 +74,30 @@
       <section class="block container">
         <header class="block__header">
           <h2>Games</h2>
-          <p>
-            Check out the games. Word is currently the only complete, finished
-            game. Big Heart is a mini game to explore the possibilities for a
-            WebGL RPG game. Gospelgo and Gospelgo Desktop are in the alpha
-            stages.
-          </p>
+          <section class="grid grid--1x2">
+            <div style="width: 100%; padding: 4rem">
+              <div class="card card--secondary" data-aos="fade-right">
+                <header class="card__header">Play in Browser</header>
+                <div class="card__body">
+                  Play Gospelgo games from any browser—desktop or mobile (PC,
+                  Mac, Linux, iOS, Android). No downloads, no installs. On
+                  supported devices you can add them as a Progressive Web App
+                  for offline play.
+                </div>
+              </div>
+            </div>
+            <div style="width: 100%; padding: 4rem">
+              <div class="card card--secondary" data-aos="fade-left">
+                <header class="card__header">Feedback</header>
+                <div class="card__body">
+                  Let us know what you think! Your feedback will help shape
+                  Gospelgo games! Many are still in development and available
+                  for early access. Let's work together to make them great. Look
+                  forwared to hearing from you!
+                </div>
+              </div>
+            </div>
+          </section>
         </header>
         <article class="grid grid--1x2 feature">
           <div class="feature__content" data-aos="zoom-in-left">
@@ -103,14 +121,13 @@
               >Play</a
             >
           </div>
-          <a href="https://word.gospelgo.org/" target="_blank">
-            <img
-              data-aos="fade-right"
-              class="feature__image"
-              src="images/word-feature.png"
-              alt="Word feature, shows words per minute"
-            />
-          </a>
+          <img
+            data-aos="fade-right"
+            class="feature__image lightbox-trigger"
+            src="images/word-feature.png"
+            alt="Word feature, shows words per minute"
+            data-lightbox-src="images/word-feature.png"
+          />
         </article>
         <article class="grid grid--1x2 feature">
           <div class="feature__content" data-aos="zoom-in-right">
@@ -134,14 +151,12 @@
               >Play</a
             >
           </div>
-          <a href="https://bigheart.gospelgo.org" target="_blank">
-            <img
-              data-aos="fade-left"
-              class="feature__image"
-              src="images/big-heart.png"
-              alt="Word feature, shows words per minute"
-            />
-          </a>
+          <img
+            data-aos="fade-left"
+            class="feature__image lightbox-trigger"
+            src="images/big-heart.png"
+            alt="Big Heart feature, shows gameplay"
+          />
         </article>
         <article class="grid grid--1x2 feature">
           <div class="feature__content" data-aos="zoom-in-left">
@@ -164,17 +179,15 @@
               href="https://play.gospelgo.org"
               target="_blank"
               class="link-arrow"
-              >Play</a
+              >Early Access</a
             >
           </div>
-          <a href="https://play.gospelgo.org" target="_blank">
-            <img
-              data-aos="fade-right"
-              class="feature__image"
-              src="images/gospelgo-gameplay.png"
-              alt="Word feature, shows words per minute"
-            />
-          </a>
+          <img
+            data-aos="fade-right"
+            class="feature__image lightbox-trigger"
+            src="images/gospelgo-gameplay.png"
+            alt="Gospelgo mobile feature, shows gameplay"
+          />
         </article>
         <article class="grid grid--1x2 feature">
           <div class="feature__content" data-aos="zoom-in-right">
@@ -197,17 +210,43 @@
               href="https://desktop.gospelgo.org"
               target="_blank"
               class="link-arrow"
-              >Play</a
+              >Early Access</a
             >
           </div>
-          <a href="https://desktop.gospelgo.org" target="_blank">
+          <img
+            data-aos="fade-left"
+            class="feature__image lightbox-trigger"
+            src="images/gospelgo-desktop-gameplay.png"
+            alt="Gospelgo desktop feature, shows gameplay"
+          />
+        </article>
+        <article class="grid grid--1x2 feature">
+          <div class="feature__content" data-aos="zoom-in-right">
             <img
-              data-aos="fade-left"
-              class="feature__image feature--gg-desktop-img"
-              src="images/gospelgo-desktop-gameplay.png"
-              alt="Word feature, shows words per minute"
+              class="icon--gg4"
+              src="images/Gg4_400.png"
+              alt="Word small icon"
             />
-          </a>
+            <img
+              class="icon--construction"
+              src="images/construction-caution-svgrepo-com.svg"
+              alt="Construction icon ind indicating game is not complete"
+            />
+            <h3 class="feature__heading">BubbleShooter</h3>
+            <p>BubbleShooter is a classic bubble shooter game. Enjoy!</p>
+            <a
+              href="https://bubbleshooter.gospelgo.org"
+              target="_blank"
+              class="link-arrow"
+              >Early Access</a
+            >
+          </div>
+          <img
+            data-aos="fade-left"
+            class="feature__image lightbox-trigger"
+            src="images/bubbleshooter-gameplay.gif"
+            alt="Bubbleshooter gameplay image."
+          />
         </article>
       </section>
       <div class="callout callout--primary callout--footer">
@@ -222,7 +261,7 @@
             </p>
           </div>
           <a
-            href="https://www.youtube.com/@InTouchMinistries"
+            href="https://youtube.com/watch?v=LJG94XVL0t0&list=PLkpgE_jJEv1DfHlX_mqGe6mZfuOMuJ4BW"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn--secondary btn--stretched"
@@ -247,6 +286,7 @@
               <li><a href="/big-heart/">Big Heart</a></li>
               <li><a href="/gospelgo/">Gospelgo</a></li>
               <li><a href="/gospelgo-desktop/">Gospelgo desktop</a></li>
+              <li><a href="../bubble-shooter/">BubbleShooter</a></li>
             </ul>
           </div>
         </div>
@@ -300,6 +340,7 @@
               </li>
               <li><a href="/game-studios/">Game studios</a></li>
               <li><a href="/links/">Links</a></li>
+              <li><a href="/friends/">Friends</a></li>
             </ul>
           </div>
         </div>
@@ -309,92 +350,7 @@
         </div>
       </div>
     </footer>
-    <!-- Gg Website -->
-    <!--
-    <header>
-      
-      <nav aria-label="Main tabs">
-        <ul>
-          <li>
-            <a href="#" role="tab" class="logo active" id="logo-tab">
-              <img
-                src="images/gospelgo-logo.png"
-                alt="Gospel in games."
-                title="Gospel go - I love Jesus!"
-                class="logo-header"
-              />
-            </a>
-          </li>
-          <li><a href="#mobile" role="tab">Mobile Games</a></li>
-          <li><a href="#desktop" role="tab">Desktop Games</a></li>
-          <li><a href="#about" role="tab">About</a></li>
-          <li><a href="#" role="tab">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="page-content">
-      <p class="highlight">Jesus reigns in video games.</p>
-      <br />
-      <button onclick="toggleDarkMode()">Toggle Dark Mode</button><br /><br />
-      <article>
-        <a href="/notes.html">Temporary Link to Notes</a>
-      </article>
 
-      <div class="line-block">
-        <h3>Mobile browser games:</h3>
-        <a href="https://play.gospelgo.org" target="_blank"
-          >Play Gospel Go Mobile (in development)</a
-        ><br /><br />
-        <h3>Desktop browser games:</h3>
-        <a href="https://desktop.gospelgo.org" target="_blank"
-          >Play Gospel Go Desktop (in development)</a
-        ><br />
-        <a href="https://word.gospelgo.org" target="_blank"
-          >Play Word (Bible typing game)</a
-        ><br /><br />
-        <h3>Desktop/Mobile brower games:</h3>
-        <a href="https://bigheart.gospelgo.org" target="_blank"
-          >Play Big Heart (mini RPG)</a
-        ><small> Hint: follow the path</small><br /><br />
-        <small>Note: Install any game as an app (Progressive Web App)</small
-        ><br />
-        <small>- E.g., Your browser's hamburger menu > More tools > Apps</small
-        ><br />
-        <small>- Tested on Windows and Android</small><br />
-        <small>- Or choose "Add tab to taskbar"</small><br />
-        <h4>How do people meet Jesus?</h4>
-        <a
-          href="https://www.youtube.com/playlist?list=PLkpgE_jJEv1DfHlX_mqGe6mZfuOMuJ4BW"
-          target="_blank"
-          >Curated YouTube playlist</a
-        ><br /><br />
-        <h4>Developers, enhance your Unity WebGL builds:</h4>
-        <a
-          href="https://assetstore.unity.com/packages/tools/integration/sdresponsive-webgl-system-314596"
-          target="_blank"
-          >SDResponsive WebGL System</a
-        ><br /><br /><br />
-      </div>
-    </div>
-
-    <footer class="footer-links">
-      <a href="about.html">About Gospel go</a><br />
-      <div class="discord-invite">
-        <p>📢 Join the Gospel Go Community on Discord!</p>
-        <p>
-          Connect with players, get updates, and share feedback.<br />
-          👉
-          <a href="https://discord.gg/x9chq2cw2P" target="_blank"
-            >Join us on Discord</a
-          >
-        </p>
-      </div>
-
-      <p>📧 email: admin@gospelgo.org</p>
-    </footer>
-
-    <script src="dark-mode.js"></script>
-    -->
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
