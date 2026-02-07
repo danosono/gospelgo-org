@@ -249,10 +249,40 @@ p {
 
 	.icon--construction {
 		
-		width: 100px;
-		height: 100px;
+		width: 50px;
+		height: 50px;
 		margin-left: 6rem;;
 		/*filter: invert(38%) sepia(86%) saturate(4800%) hue-rotate(38deg) brightness(0.93);*/
+	}
+
+	.icon-tooltip {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+	}
+
+	.icon-tooltip::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		left: 50%;
+		top: -12px;
+		transform: translate(-50%, -100%);
+		background: var(--color-primary);
+		color: #fff;
+		font-size: 1.2rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		padding: 0.4rem 0.8rem;
+		border-radius: 6px;
+		opacity: 0;
+		pointer-events: none;
+		white-space: nowrap;
+		transition: opacity 0.15s ease, transform 0.15s ease;
+	}
+
+	.icon-tooltip:hover::after {
+		opacity: 1;
+		transform: translate(-50%, -120%);
 	}
 
 	.icon-container {
