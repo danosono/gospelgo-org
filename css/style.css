@@ -470,6 +470,18 @@ p {
 		background: #02cdf1;
 	}
 
+	.card--info {
+		width: 100%;
+		padding: 2rem 0rem;
+	}
+
+	@media screen and (min-width: 768px) {
+		.card--info {
+			width: 100%;
+			padding: 2rem 4rem;
+		}
+	}
+
 	/* Plans */
 
 	.plan {
