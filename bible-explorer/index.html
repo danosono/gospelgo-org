@@ -3,20 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Gospelgo feedback form." />
-    <meta property="og:title" content="Feedback for Gospelgo." />
+    <meta name="description" content="Bible Explorer by Gospelgo." />
+    <meta property="og:title" content="Bible Explorer by Gospelgo." />
     <meta
       property="og:description"
-      content="
-      Leave feedback on the Gospelgo website, games, or anything else related to Gospelgo."
+      content="Gospelgo provides free WebGL games that anyone can play by visiting a web address."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
       content="https://gospelgo.org/images/Gospelgo300.png"
     />
-    <meta property="og:url" content="https://gospelgo.org/feedback" />
-    <title>Welcome to Gospelgo</title>
+    <meta property="og:url" content="https://gospelgo.org/bible-explorer" />
+    <title>Bible Explorer by Gospelgo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,9 +41,7 @@
           <use href="../images/sprite.svg#menu"></use>
         </svg>
         <ul class="list nav__list collapsible__content">
-          <li class="nav__item">
-            <a href="../feedback/" class="disabled-link">Feedback</a>
-          </li>
+          <li class="nav__item"><a href="/feedback/">Feedback</a></li>
           <li class="nav__item"><a href="../games/">Games</a></li>
           <li class="nav__item"><a href="../about/">About</a></li>
           <li class="nav__item"><a href="../get-involved/">Get Involved</a></li>
@@ -54,51 +51,140 @@
     </header>
     <section class="block block--dark block--skewed-left">
       <div class="container">
-        <h2 class="block__heading">Feedback</h2>
+        <h2>Bible Explorer</h2>
+        <p>Explore topics and genres from a big picture perspective.</p>
         <p>
-          Leave your feedback below. We appreciate all kinds of feedback to help
-          Gospelgo improve.
+          Hours of learning and reading.
+          <a href="https://bible-explorer.gospelgo.org" target="_blank"
+            >Visit Bible Explorer</a
+          >
         </p>
         <p>
-          Give your feedback on the website, games, or anything else related to
-          Gospelgo.
+          Word uses the
+          <a href="https://bereanbible.com/" target="_blank"
+            >Berean Standard Bible (BSB)</a
+          >
+          translation and an
+          <a href="https://ccel.org/ccel/nave/bible.html"
+            >open source dataset</a
+          >
+          of the Nave's Topical Index.
         </p>
+        <br />
+        <span class="icon-tooltip" data-tooltip="DESKTOP">
+          <img
+            class="icon"
+            src="../images/desktop-svgrepo-com.svg"
+            alt="Desktop icon indicating game is for desktop"
+          />
+        </span>
       </div>
     </section>
-    <div class="container">
-      <form
-        method="POST"
-        action="/.netlify/functions/form-discord"
-        class="feedback-form"
-      >
-        <!-- Honeypot -->
-        <input
-          type="text"
-          name="company"
-          tabindex="-1"
-          autocomplete="off"
-          hidden
+    <section class="container">
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content" data-aos="fade-left">
+          <h3 class="feature__heading">Interactive</h3>
+          <p>
+            Inteactive exploraton of the Bible with an emphasis on a big picture
+            view of the Bible and exploring topics across the entire Bible.
+          </p>
+          <a
+            href="https://bible-explorer.gospelgo.org"
+            target="_blank"
+            class="link-arrow"
+            >Bible Explorer</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          data-aos="fade-right"
+          src="../images/bible-explorer-interactive.gif"
+          alt="Bible Explorer feature, shows interactive exploration"
+          data-lightbox-src="../images/bible-explorer-interactive.gif"
         />
-
-        <!-- Turnstile -->
-        <div
-          class="cf-turnstile"
-          data-sitekey="0x4AAAAAACVtMjxDVWxIc-I9"
-          data-theme="light"
-        ></div>
-
-        <textarea name="msg" placeholder="Your feedback…" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+      </article>
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content" data-aos="fade-right">
+          <h3 class="feature__heading">Books of the Bible</h3>
+          <p>
+            The books of the Bible are displayed in order and proportional to
+            their length. Genres are indicated by color and highlight. See where
+            in the entire Bible many topics are mentionned. Summary and related
+            verse modals are available for each book.
+          </p>
+          <a
+            href="https://bible-explorer.gospelgo.org"
+            target="_blank"
+            class="link-arrow"
+            >Bible Explorer</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          data-aos="fade-left"
+          src="../images/bible-explorer-bible.png"
+          alt="Bible Explorer feature, shows books of the Bible"
+          data-lightbox-src="../images/bible-explorer-bible.png"
+        />
+      </article>
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content" data-aos="fade-left">
+          <h3 class="feature__heading">Book View</h3>
+          <p>
+            View dispersment of topics within each book. Modal panes show
+            related verses or drill down to the verse level.
+          </p>
+          <a
+            href="https://bible-explorer.gospelgo.org"
+            target="_blank"
+            class="link-arrow"
+            >Bible Explorer</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          data-aos="fade-right"
+          src="../images/bible-explorer-book.png"
+          alt="Bible Explorer feature, shows book view of the Bible"
+          data-lightbox-src="../images/bible-explorer-book.png"
+        />
+      </article>
+      <article class="grid grid--1x2 feature">
+        <div class="feature__content" data-aos="fade-right">
+          <h3 class="feature__heading">Verse View</h3>
+          <p>
+            Skip directly to the first related verse for a given chapter or jump
+            to other chapters and books for the current topic. Change topics
+            from the verse view, or clear the current topic and simply read from
+            any place in the Bible.
+          </p>
+          <a
+            href="https://bible-explorer.gospelgo.org"
+            target="_blank"
+            class="link-arrow"
+            >Bible Explorer</a
+          >
+        </div>
+        <img
+          class="feature__image lightbox-trigger"
+          data-aos="fade-left"
+          src="../images/bible-explorer-verse.png"
+          alt="Bible Explorer feature, shows verse view of the Bible"
+          data-lightbox-src="../images/bible-explorer-verse.png"
+        />
+      </article>
+    </section>
     <div class="container">
       <div class="callout callout--primary callout--footer">
         <div class="grid grid--1x2">
           <div class="callout__content">
-            <h2 class="callout__heading">Jesus is the way.</h2>
+            <h2 class="callout__heading">Jesus is alive.</h2>
             <p>
-              For God did not send His Son into the world to condemn the world,
-              but to save the world through Him.
+              Revelation 21:5-6 And the One seated on the throne said, “Behold,
+              I make all things new.” Then He said, “Write this down, for these
+              words are faithful and true.” And He told me, “It is done! I am
+              the Alpha and the Omega, the Beginning and the End. To the thirsty
+              I will give freely from the spring of the water of life.
             </p>
           </div>
           <a
@@ -106,7 +192,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn--secondary btn--stretched"
-            >Learn more about the gospel</a
+            >Jesus in today's world.</a
           >
         </div>
       </div>
@@ -142,7 +228,9 @@
               <li><a href="../about/">About Gospelgo</a></li>
               <li><a href="../faq/">FAQs</a></li>
               <li>
-                <a href="../bible-explorer">Bible Explorer</a>
+                <a href="../bible-explorer/" class="disabled-link"
+                  >Bible Explorer</a
+                >
               </li>
               <li><a href="../privacy-policy/">Privacy Policy</a></li>
               <li>
@@ -160,7 +248,7 @@
           </div>
           <div class="collapsible__content">
             <ul class="list">
-              <li><a href="../feedback/" class="disabled-link">Feedback</a></li>
+              <li><a href="../feedback/">Feedback</a></li>
               <li><a href="../share/">Share</a></li>
               <li><a href="../pray/">Pray</a></li>
               <li><a href="../donate/">Donate</a></li>
@@ -196,11 +284,6 @@
         </div>
       </div>
     </footer>
-    <script
-      src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-      async
-      defer
-    ></script>
     <script src="../js/main.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
