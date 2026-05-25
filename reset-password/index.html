@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gospel Go — Reset Password</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #111;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #eee;
+      }
+
+      .logo {
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        color: #666;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .card {
+        background: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 14px;
+        padding: 40px 44px;
+        width: 380px;
+        max-width: 94vw;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0 0 6px;
+        font-size: 1.35rem;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        margin: 0 0 28px;
+        font-size: 0.88rem;
+        color: #777;
+      }
+
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+        border-radius: 7px;
+        border: 1px solid #444;
+        background: #2a2a2a;
+        color: #eee;
+        font-size: 1rem;
+      }
+
+      input[type="password"]:focus {
+        outline: 2px solid #4a90d9;
+        border-color: transparent;
+      }
+
+      button {
+        width: 100%;
+        padding: 13px;
+        border: none;
+        border-radius: 7px;
+        background: #2d6a2d;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+
+      button:hover:not(:disabled) {
+        background: #3a823a;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: default;
+      }
+
+      #msg {
+        margin-top: 16px;
+        font-size: 0.86rem;
+        min-height: 1.1em;
+        line-height: 1.5;
+      }
+
+      .games-link {
+        margin-top: 32px;
+        font-size: 0.82rem;
+        color: #555;
+      }
+
+      .games-link a {
+        color: #4a90d9;
+        text-decoration: none;
+      }
+      .games-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">Gospel Go</div>
+
+    <div class="card">
+      <h1>Set New Password</h1>
+      <p class="subtitle">Your account is shared across all Gospel Go games.</p>
+
+      <input
+        id="pw1"
+        type="password"
+        placeholder="New password"
+        autocomplete="new-password"
+      />
+      <input
+        id="pw2"
+        type="password"
+        placeholder="Confirm password"
+        autocomplete="new-password"
+      />
+      <button id="btn">Set Password</button>
+      <div id="msg"></div>
+    </div>
+
+    <div class="games-link">
+      <a href="https://gospelgo.org">Gospel Go</a>
+    </div>
+
+    <script>
+      (function () {
+        var SUPABASE_URL = "https://akajfgobhzkadiigydkh.supabase.co";
+        var ANON_KEY =
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFrYWpmZ29iaHprYWRpaWd5ZGtoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg5NzA1NjEsImV4cCI6MjA3NDU0NjU2MX0.Rz3duZlc1i_u2_wfJurbP9FNWz6BhfqshOS3pHySp_A";
+
+        var params = new URLSearchParams(window.location.hash.slice(1));
+        var token = params.get("access_token");
+        var type = params.get("type");
+        var btn = document.getElementById("btn");
+        var msg = document.getElementById("msg");
+
+        // Token missing or wrong link type — show error immediately
+        if (!token || type !== "recovery") {
+          btn.disabled = true;
+          msg.style.color = "#c66";
+          msg.textContent =
+            "Invalid or expired link. Please request a new password reset from the game.";
+          return;
+        }
+
+        btn.addEventListener("click", async function () {
+          var pw1 = document.getElementById("pw1").value;
+          var pw2 = document.getElementById("pw2").value;
+
+          msg.style.color = "#aaa";
+          if (pw1.length < 6) {
+            msg.textContent = "Password must be at least 6 characters.";
+            return;
+          }
+          if (pw1 !== pw2) {
+            msg.textContent = "Passwords do not match.";
+            return;
+          }
+
+          btn.disabled = true;
+          msg.textContent = "Updating…";
+
+          try {
+            var res = await fetch(SUPABASE_URL + "/auth/v1/user", {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                apikey: ANON_KEY,
+                Authorization: "Bearer " + token,
+              },
+              body: JSON.stringify({ password: pw1 }),
+            });
+
+            if (res.ok) {
+              msg.style.color = "#5c5";
+              msg.textContent =
+                "Password updated! You can now log into any Gospel Go game.";
+              btn.textContent = "Done ✓";
+            } else {
+              var err = await res.json().catch(function () {
+                return {};
+              });
+              msg.style.color = "#c66";
+              msg.textContent =
+                err.message || "Something went wrong. Please try again.";
+              btn.disabled = false;
+            }
+          } catch (e) {
+            msg.style.color = "#c66";
+            msg.textContent =
+              "Network error — check your connection and try again.";
+            btn.disabled = false;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
