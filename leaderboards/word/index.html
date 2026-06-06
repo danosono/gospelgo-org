@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Public Word leaderboard for Gospelgo." />
+    <meta property="og:title" content="Word Leaderboard - Gospelgo" />
+    <meta
+      property="og:description"
+      content="Top Word players ranked by highest WPM."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://gospelgo.org/images/Gospelgo300.png"
+    />
+    <meta property="og:url" content="https://gospelgo.org/leaderboards/word" />
+    <title>Word Leaderboard | Gospelgo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="normalize" href="../../css/normalize.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="icon" type="image/png" href="../../Gg.png" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav collapsible">
+        <a href="/"
+          ><img
+            class="nav__brand"
+            style="height: 80px; width: auto"
+            src="../../images/gospelgo-logo.png"
+            alt="gospelgo logo"
+        /></a>
+        <svg class="icon icon--white nav__toggler">
+          <use href="../../images/sprite.svg#menu"></use>
+        </svg>
+        <ul class="list nav__list collapsible__content">
+          <li class="nav__item"><a href="/feedback/">Feedback</a></li>
+          <li class="nav__item"><a href="../../games/">Games</a></li>
+          <li class="nav__item"><a href="../../about/">About</a></li>
+          <li class="nav__item">
+            <a href="../../leaderboards/">Leaderboards</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="block block--dark block--skewed-left">
+      <div class="container">
+        <img
+          src="../../images/word-logo-long.png"
+          alt="Word logo"
+          style="width: 100%; max-width: 400px"
+        />
+        <h1 class="block__heading">Word Leaderboard</h1>
+        <p>Top players ranked by highest recorded WPM.</p>
+      </div>
+    </section>
+
+    <section class="block container">
+      <div class="leaderboard-card" data-leaderboard="word" data-limit="20">
+        <h2>Top WPM</h2>
+        <p>
+          Rankings show each player's best WPM and the verse where they reached
+          it.
+        </p>
+        <p class="leaderboard-status" data-leaderboard-status>
+          Loading leaderboard...
+        </p>
+        <p class="leaderboard-updated" data-leaderboard-updated>
+          Last updated: --
+        </p>
+        <div class="leaderboard-actions">
+          <button class="btn btn--outline" data-leaderboard-retry hidden>
+            Retry
+          </button>
+        </div>
+        <ol class="leaderboard-list" data-leaderboard-list></ol>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="callout callout--primary callout--footer">
+        <div class="grid grid--1x2">
+          <div class="callout__content">
+            <h2 class="callout__heading">Ready to Climb?</h2>
+            <p>Play Word and see if you can reach the top.</p>
+          </div>
+          <a
+            href="https://word.gospelgo.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn--secondary btn--stretched"
+            >Play Word</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <footer class="block block--dark footer">
+      <div class="container grid footer__sections">
+        <div class="collapsible collapsible--expanded footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Leaderboards</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="../../images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="../">Leaderboard Hub</a></li>
+              <li><a href="./" class="disabled-link">Word</a></li>
+              <li><a href="../bubble-shooter/">Bubble Shooter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="collapsible footer__section">
+          <div class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Games</h2>
+            <svg class="icon icon--white collapsible__chevron">
+              <use href="../../images/sprite.svg#chevron"></use>
+            </svg>
+          </div>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="../../word/">Word</a></li>
+              <li><a href="../../bubble-shooter/">Bubble Shooter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__brand">
+          <img src="../../images/Gospelgo300.png" alt="gospelgo logo" />
+          <p class="footer__copyright">Copyright 2026</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+  </body>
+</html>
