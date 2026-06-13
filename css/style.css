@@ -1146,6 +1146,17 @@ a {
   caret-color: #fff;
 }
 
+.feedback-form input[type="email"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: var(--color-background);
+  color: #fff;
+  caret-color: #fff;
+}
+
 .feedback-form button {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
