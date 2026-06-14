@@ -72,6 +72,24 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// Copy to clipboard for the footer admin email
+document.addEventListener("click", (e) => {
+  const button = e.target.closest(".footer__email-copy");
+  if (!button) return;
+
+  const text = button.getAttribute("data-copy-text");
+  navigator.clipboard.writeText(text).then(() => {
+    const feedback = button.querySelector(".footer__email-copy-feedback");
+    if (!feedback) return;
+
+    feedback.classList.add("footer__email-copy-feedback--visible");
+    clearTimeout(button._copyFeedbackTimeout);
+    button._copyFeedbackTimeout = setTimeout(() => {
+      feedback.classList.remove("footer__email-copy-feedback--visible");
+    }, 1500);
+  });
+});
+
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")

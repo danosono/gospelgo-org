@@ -1041,6 +1041,45 @@ a {
   color: #fff;
 }
 
+.footer__email-copy {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #777;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer__email-copy:hover {
+  color: #fff;
+}
+
+.footer__email-copy-feedback {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin-bottom: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  background: #fff;
+  color: #232323;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  pointer-events: none;
+}
+
+.footer__email-copy-feedback--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .footer__section {
   padding: 2rem;
   border-bottom: 1px solid #393939;
