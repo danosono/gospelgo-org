@@ -38,6 +38,12 @@ The site talks directly to a shared Supabase project (URL and anon key are hardc
 - **Public leaderboards** (`leaderboards/word/`, `leaderboards/bubble-shooter/`): rendered by `js/main.js` via `data-leaderboard="word"|"bubble"` containers calling Supabase RPCs `word_top_wpm` / `bubble_top_overall`. To add a new leaderboard, add a container with `data-leaderboard`, `data-leaderboard-list`, `data-leaderboard-status`, `data-limit`, `data-refresh-ms`, and a matching RPC + render function in `js/main.js`.
 - **Password reset** (`reset-password/index.html`): standalone page that reads the Supabase recovery `access_token` from the URL hash and PUTs a new password to `/auth/v1/user`. This page is the shared password-reset landing page for *all* Gospelgo games (they all use one Supabase auth project/player identity) — see the global `gospel-go-auth.md` rules for the cross-game auth/session architecture; this site only hosts the reset-password UI, not game session logic.
 
+## Payments (Stripe)
+
+`/donate/` lets visitors give a one-time or monthly donation. The form posts to `netlify/functions/create-donation-checkout.js`, which builds a Stripe Checkout Session with an ad-hoc `price_data` line item (no Products/Prices need to be pre-created in the Stripe dashboard) and 303-redirects to Stripe's hosted checkout page. `mode` is `payment` for one-time gifts and `subscription` (monthly interval) for recurring ones. Success lands on `/thanks-donate/`; cancel returns to `/donate/`.
+
+Like the other functions here, it calls the Stripe REST API directly via `fetch` (no `stripe` SDK dependency) and needs `STRIPE_SECRET_KEY` set as a Netlify env var. PayPal (`paypal.me/danosono`) remains as a secondary donate option on the page.
+
 ## Content/tone notes
 
 - This is a faith-based project; pages routinely include scripture quotes and "gospel callout" sections (`callout--primary callout--footer` block linking to a gospel video) — follow this pattern when adding new pages rather than omitting it.

@@ -234,6 +234,54 @@ async function loadLeaderboard(container) {
   }
 }
 
+// Donate form: tier buttons fill the custom amount field, and the submit
+// button label reflects the chosen amount/interval.
+document.addEventListener("DOMContentLoaded", () => {
+  const donateForm = document.getElementById("donate-form");
+  if (!donateForm) return;
+
+  const amountInput = document.getElementById("donate-amount");
+  const submitBtn = document.getElementById("donate-submit");
+  const tierButtons = donateForm.querySelectorAll(".donate-form__tier");
+  const intervalInputs = donateForm.querySelectorAll('input[name="interval"]');
+
+  function updateSubmitLabel() {
+    const amount = parseFloat(amountInput.value);
+    const interval = donateForm.querySelector(
+      'input[name="interval"]:checked',
+    )?.value;
+
+    if (Number.isFinite(amount) && amount > 0) {
+      submitBtn.textContent =
+        interval === "month" ? `Donate $${amount}/month` : `Donate $${amount}`;
+    } else {
+      submitBtn.textContent = "Donate";
+    }
+  }
+
+  tierButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      amountInput.value = btn.getAttribute("data-amount");
+      tierButtons.forEach((b) =>
+        b.classList.remove("donate-form__tier--active"),
+      );
+      btn.classList.add("donate-form__tier--active");
+      updateSubmitLabel();
+    });
+  });
+
+  amountInput.addEventListener("input", () => {
+    tierButtons.forEach((b) =>
+      b.classList.remove("donate-form__tier--active"),
+    );
+    updateSubmitLabel();
+  });
+
+  intervalInputs.forEach((input) =>
+    input.addEventListener("change", updateSubmitLabel),
+  );
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-leaderboard]").forEach((container) => {
     const retryBtn = container.querySelector("[data-leaderboard-retry]");

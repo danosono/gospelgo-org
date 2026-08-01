@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="About Gospelgo." />
-    <meta property="og:title" content="About Gospelgo." />
+    <meta name="description" content="Donation success page." />
+    <meta property="og:title" content="Thanks for donating to Gospelgo." />
     <meta
       property="og:description"
-      content="Gospelgo provides free WebGL games that anyone can play by visiting a web address."
+      content="Thanks for supporting Gospelgo."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
       content="https://gospelgo.org/images/Gospelgo300.png"
     />
-    <meta property="og:url" content="https://gospelgo.org/about" />
+    <meta property="og:url" content="https://gospelgo.org/thanks-donate" />
     <title>Welcome to Gospelgo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,7 +41,7 @@
           <use href="../images/sprite.svg#menu"></use>
         </svg>
         <ul class="list nav__list collapsible__content">
-          <li class="nav__item"><a href="/feedback/">Feedback</a></li>
+          <li class="nav__item"><a href="../feedback/">Feedback</a></li>
           <li class="nav__item"><a href="../games/">Games</a></li>
           <li class="nav__item"><a href="../about/">About</a></li>
           <li class="nav__item"><a href="../get-involved/">Get Involved</a></li>
@@ -51,98 +51,23 @@
     </header>
     <section class="block block--dark block--skewed-left">
       <div class="container">
-        <h2 class="block__heading">Support Gospelgo</h2>
+        <h2 class="block__heading">Thank you!</h2>
         <p>
-          Donations help keep Gospelgo's games and Bible apps free for
-          everyone. Choose an amount below to give once or become a monthly
-          supporter — you'll be taken to Stripe's secure checkout to finish.
+          Thank you for supporting Gospelgo. Your donation helps keep the
+          games and Bible apps free for everyone.
         </p>
-        <form
-          method="POST"
-          action="/.netlify/functions/create-donation-checkout"
-          class="donate-form"
-          id="donate-form"
-        >
-          <!-- Honeypot -->
-          <input
-            type="text"
-            name="company"
-            tabindex="-1"
-            autocomplete="off"
-            hidden
-          />
-
-          <div class="donate-form__toggle" role="radiogroup" aria-label="Donation frequency">
-            <label class="donate-form__toggle-option">
-              <input type="radio" name="interval" value="once" checked />
-              <span>One-time</span>
-            </label>
-            <label class="donate-form__toggle-option">
-              <input type="radio" name="interval" value="month" />
-              <span>Monthly</span>
-            </label>
-          </div>
-
-          <div class="donate-form__tiers">
-            <button type="button" class="btn btn--outline donate-form__tier" data-amount="5">$5</button>
-            <button type="button" class="btn btn--outline donate-form__tier" data-amount="15">$15</button>
-            <button type="button" class="btn btn--outline donate-form__tier" data-amount="30">$30</button>
-            <button type="button" class="btn btn--outline donate-form__tier" data-amount="50">$50</button>
-          </div>
-
-          <div class="input-group donate-form__custom">
-            <span class="donate-form__currency">$</span>
-            <input
-              class="input"
-              type="number"
-              name="amount"
-              id="donate-amount"
-              min="1"
-              max="10000"
-              step="1"
-              placeholder="Other amount"
-              required
-            />
-          </div>
-
-          <button type="submit" class="btn btn--accent btn--block" id="donate-submit">
-            Donate
-          </button>
-          <p class="donate-form__note">
-            You'll be redirected to Stripe's secure checkout to complete your
-            donation. Gospelgo is not a registered nonprofit, so donations are
-            not tax-deductible.
-          </p>
-        </form>
         <p>
-          Prefer PayPal?
+          Join our e-mail list to stay updated:
           <a
-            href="https://www.paypal.me/danosono"
+            href="../mailing-list/"
             class="link-arrow"
-            target="_blank"
-            >Donate with PayPal</a
+            style="margin-left: 4rem"
+            >Gospelgo e-mail list</a
           >
         </p>
-        <p>Join our e-mail list to stay updated:</p>
-        <a href="../mailing-list/" class="link-arrow">Gospelgo e-mail list</a>
       </div>
     </section>
-    <div class="container">
-      <section class="block container" data-aos="fade-up">
-        <header class="block__header">
-          <h2 class="block__heading">Use of Donations</h2>
-          <p>
-            Donations will be used for Gospelgo related expenses or saved for
-            future expenses. Current expenses include domain registration and
-            renewal, hosting, backend services, and software licenses. As the
-            player base grows, hosting and backend service costs will grow as
-            well. Future expenses may include hiring additional developers,
-            artists, and other team members to help with development, as well as
-            marketing and other expenses related to growing the player base.
-          </p>
-        </header>
-      </section>
-    </div>
+    <div class="container"></div>
     <div class="container">
       <div class="callout callout--primary callout--footer">
         <div class="grid grid--1x2">
@@ -150,12 +75,12 @@
             <h2 class="callout__heading">Go</h2>
             <p>
               Matthew 28:18-20 Berean Bible <br />
-              Then Jesus came to them and said, “All authority in heaven and on
-              earth has been given to Me. Therefore go and make disciples of all
-              nations, baptizing them in the name of the Father, and of the Son,
-              and of the Holy Spirit, and teaching them to obey all that I have
-              commanded you. And surely I am with you always, even to the end of
-              the age.”
+              Then Jesus came to them and said, “All authority in heaven and
+              on earth has been given to Me. Therefore go and make disciples
+              of all nations, baptizing them in the name of the Father, and
+              of the Son, and of the Holy Spirit, and teaching them to obey
+              all that I have commanded you. And surely I am with you always,
+              even to the end of the age.”
             </p>
           </div>
           <a
@@ -238,7 +163,7 @@
               <li><a href="../feedback/">Feedback</a></li>
               <li><a href="../share/">Share</a></li>
               <li><a href="../pray/">Pray</a></li>
-              <li><a href="../donate/" class="disabled-link">Donate</a></li>
+              <li><a href="../donate/">Donate</a></li>
             </ul>
           </div>
         </div>

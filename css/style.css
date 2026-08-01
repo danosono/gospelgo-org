@@ -1310,6 +1310,79 @@ a {
   cursor: pointer;
 }
 
+/* Donate form */
+.donate-form {
+  max-width: 500px;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--color-background-darker);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.donate-form__toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.donate-form__toggle-option {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.donate-form__toggle-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.donate-form__toggle-option:has(input:checked) {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.donate-form__tiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.donate-form__tier {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.donate-form__tier--active {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.donate-form__custom {
+  margin-bottom: 1rem;
+}
+
+.donate-form__currency {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 1.5rem;
+  font-size: 2rem;
+  color: var(--color-headings);
+}
+
+.donate-form__note {
+  font-size: 1.4rem;
+  color: var(--color-body);
+  margin-top: 1rem;
+}
+
 /* Lightbox */
 .lightbox {
   position: fixed;
