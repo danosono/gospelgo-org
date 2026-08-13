@@ -57,6 +57,7 @@
           everyone. Choose an amount below to give once or become a monthly
           supporter — you'll be taken to Stripe's secure checkout to finish.
         </p>
+        <h3 style="margin-bottom: 0.5rem">Give by card</h3>
         <form
           method="POST"
           action="/.netlify/functions/create-donation-checkout"
@@ -114,19 +115,22 @@
             not tax-deductible.
           </p>
         </form>
+        <div class="donate-form">
+          <h3 style="margin-top: 0">Give with Venmo</h3>
+          <p class="donate-form__note" style="margin-top: 0">
+            Prefer the Venmo app? Send your gift directly — no card needed.
+          </p>
+          <a
+            href="https://venmo.com/GospelGo"
+            class="btn btn--secondary btn--block"
+            target="_blank"
+            >Donate with Venmo</a
+          >
+        </div>
         <p>
           Can't donate right now? No worries at all — every game and app on
           this site is free, and it's here for you regardless. You are
           loved. Thanks for playing.
-        </p>
-        <p>
-          Prefer PayPal?
-          <a
-            href="https://www.paypal.me/danosono"
-            class="link-arrow"
-            target="_blank"
-            >Donate with PayPal</a
-          >
         </p>
         <p>Join our e-mail list to stay updated:</p>
         <a href="../mailing-list/" class="link-arrow">Gospelgo e-mail list</a>

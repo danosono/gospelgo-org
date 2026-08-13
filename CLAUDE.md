@@ -42,7 +42,7 @@ The site talks directly to a shared Supabase project (URL and anon key are hardc
 
 `/donate/` lets visitors give a one-time or monthly donation. The form posts to `netlify/functions/create-donation-checkout.js`, which builds a Stripe Checkout Session with an ad-hoc `price_data` line item (no Products/Prices need to be pre-created in the Stripe dashboard) and 303-redirects to Stripe's hosted checkout page. `mode` is `payment` for one-time gifts and `subscription` (monthly interval) for recurring ones. Success lands on `/thanks-donate/`; cancel returns to `/donate/`.
 
-Like the other functions here, it calls the Stripe REST API directly via `fetch` (no `stripe` SDK dependency) and needs `STRIPE_SECRET_KEY` set as a Netlify env var. PayPal (`paypal.me/danosono`) remains as a secondary donate option on the page.
+Like the other functions here, it calls the Stripe REST API directly via `fetch` (no `stripe` SDK dependency) and needs `STRIPE_SECRET_KEY` set as a Netlify env var. Venmo (`venmo.com/GospelGo`) remains as a secondary donate option on the page (PayPal was removed since it was tied to a personal, not ministry, account).
 
 ## Content/tone notes
 
