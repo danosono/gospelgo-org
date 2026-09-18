@@ -1005,6 +1005,7 @@ a {
     box-shadow 0.2s;
 }
 
+.quick-access__chip:link,
 .quick-access__chip:visited {
   color: var(--color-headings);
 }
